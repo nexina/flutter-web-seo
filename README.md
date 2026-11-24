@@ -45,7 +45,7 @@ that differs from the visible page is cloaking.
 ## Quick start
 
 ```bash
-pip install flutter-web-seo           # or: git+https://github.com/nexina/flutter-web-seo
+pip install git+https://github.com/nexina/flutter-web-seo           # or: git+https://github.com/nexina/flutter-web-seo
 ```
 
 **1. Add markers to `web/index.html`:**
