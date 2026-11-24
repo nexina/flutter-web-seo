@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flutter-web-seo"
+version = "0.1.0"
+description = "Static, crawlable HTML shells, sitemap and validation for Flutter web apps."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["flutter", "flutter-web", "seo", "sitemap", "json-ld", "indexnow"]
+
+[project.scripts]
+flutter-web-seo = "flutter_web_seo.cli:main"
+
+[tool.setuptools]
+packages = ["flutter_web_seo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

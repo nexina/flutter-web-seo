@@ -1,0 +1,41 @@
+# Example: build Flutter web, generate SEO shells, validate, deploy, ping IndexNow.
+# Copy to .github/workflows/deploy.yml in YOUR app repository and adapt.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # lastmod comes from git history; a shallow clone makes it wrong
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install flutter-web-seo   # or: git+https://github.com/nexina/flutter-web-seo
+
+      - run: flutter build web --release
+
+      # Template = the freshly built index.html (it carries the SEO markers).
+      - run: flutter-web-seo build --config routes.json --template build/web/index.html --strict
+
+      - name: Deploy (replace with your own)
+        run: rsync -az --delete build/web/ "$DEPLOY_USER@$DEPLOY_HOST:/var/www/site/"
+        env:
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+
+      # After the key file and pages are live:
+      - run: flutter-web-seo indexnow --config routes.json
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}

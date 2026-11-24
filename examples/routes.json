@@ -1,0 +1,49 @@
+{
+  "site": {
+    "name": "Demo Tools",
+    "url": "https://example.com",
+    "default_og_image": "/og/default.png",
+    "locale": "en_US",
+    "robots": { "disallow": [], "extra": [] }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "title": "Demo Tools - free online text utilities",
+      "description": "Demo Tools is a small set of free online text utilities that run in your browser: count words, convert case and tidy up copied text quickly.",
+      "h1": "Free online text utilities",
+      "schema": "WebPage",
+      "boot_title": "Free online text utilities",
+      "body": "Demo Tools is a small collection of text utilities that run entirely in your browser. Nothing you type is uploaded.\n\nPick a tool below, paste your text and get the result instantly. There is no sign-up and no limit on how much text you can process.\n\n- Count words, characters and sentences\n- Convert text between upper, lower and title case",
+      "items": [
+        { "name": "Word counter", "path": "/word-counter", "description": "Count words and characters" },
+        { "name": "Case converter", "path": "/case-converter", "description": "Change the case of any text" }
+      ]
+    },
+    {
+      "path": "/word-counter",
+      "title": "Word Counter - count words and characters online",
+      "description": "Count the words, characters, sentences and paragraphs in any text. Paste your writing, see live totals and reading time. Free and private.",
+      "h1": "Word counter",
+      "schema": "WebApplication",
+      "breadcrumbs": [],
+      "body": "Paste or type your text and the totals update as you go. The counter works for essays, tweets, product descriptions and anything else with a length limit.\n\n## How it works\n\nWords are runs of characters separated by whitespace. Characters are counted with and without spaces, and reading time assumes about 200 words per minute.\n\n## Why use it\n\n- Stay inside a character limit before you post\n- Check an essay against a word target\n- Nothing is uploaded: counting happens in your browser",
+      "faq": [
+        { "q": "Is the word counter free?", "a": "Yes. It is free, needs no account and has no length limit." },
+        { "q": "Is my text uploaded?", "a": "No. The text never leaves your browser, so it stays **private**." }
+      ]
+    },
+    {
+      "path": "/case-converter",
+      "title": "Case Converter - upper, lower and title case online",
+      "description": "Convert text to UPPER CASE, lower case, Title Case or Sentence case in one click. Paste your text, copy the result. Free, fast and private.",
+      "h1": "Case converter",
+      "schema": "WebApplication",
+      "breadcrumbs": [],
+      "body": "Fix text that was typed with caps lock on, turn a headline into Title Case or lower-case a whole list in one step.\n\n## Supported cases\n\n- UPPER CASE and lower case\n- Title Case and Sentence case\n\nEverything runs locally in your browser, so you can safely paste private notes.",
+      "faq": [
+        { "q": "Does it keep line breaks?", "a": "Yes. Only the letters change; spacing and line breaks stay as they were." }
+      ]
+    }
+  ]
+}

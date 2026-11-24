@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+.DS_Store
+# Flutter demo artefacts
+examples/flutter_demo/.dart_tool/
+examples/flutter_demo/build/
+examples/flutter_demo/.flutter-plugins*
+examples/flutter_demo/pubspec.lock
